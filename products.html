@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawMatch - A Pet Adoption Website</title>
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+</head>
+
+<body>
+    <div class="header-area">
+        <div class="top-header">
+            <div class= "top-header-left"> 
+                <div class="contact-info">
+                    <ul>
+                        <li><a href="">+91 9008765432</a></li>
+                        <li><a href="">MONDAY - SATURDAY 10:00am TO 7:00pm</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+            <div class="bottom-header">
+                <div class="logo">
+                    <h2><i class="fa-solid fa-paw"></i>PawMatch</h2>
+                </div>
+            <div class="main-menu">
+                <nav>
+                    <ul class="navigation">
+                         <li><a href="">Home</a></li>
+                         <li><a href="">Our Pets</a></li>
+                         <li><a href="">Our Products</a></li>
+                         <li><a href="">About Us</a></li>
+                         <li><a href="">Contact Us</a></li>
+                    </ul>
+                        <i class="fa-solid fa-bars"></i>
+                </nav>
+            </div>
+        </div>
+    </div>
+        <div class="product-container">
+            <script>
+                const productContainer = document.querySelector('.product-container');
+        
+                const pets = [
+                    {name: 'Luna', age: '1.5 years', gender: 'Female', breed: 'Siberian Husky', price: 'Rs 4000', image: 'pic1.webp'},
+                    {name: 'Smokey', age: '11 months', gender: 'Male', breed: 'Persian', price: 'Rs 3500', image: 'pic2.webp' },
+                    {name: 'Bella', age: '3 months', gender: 'Female', breed: 'Golden Retriever', price: 'Rs 5000', image: 'pic3.webp'},
+                    {name: 'Max', age: '3 years', gender: 'Male', breed: 'Bulldog', price: 'Rs 4500', image: 'pic4.jpg' },
+                    {name: 'Charlie', age: '4 years', gender: 'Male', breed: 'Poodle', price: 'Rs 6000', image: 'pic5.2.jpg' },
+                    {name: 'Lucy', age: '2.5 years', gender: 'Female', breed: 'Beagle', price: 'Rs 5500', image: 'pic6.webp' },
+                    {name: 'Daisy', age: '1 year', gender: 'Female', breed: 'Shih Tzu', price: 'Rs 3000', image: 'pic7.jpeg' },
+                    {name: 'Buddy', age: '5 years', gender: 'Male', breed: 'Labrador', price: 'Rs 7000', image: 'pic8.jpg' },
+                    {name: 'Molly', age: '3.5 years', gender: 'Female', breed: 'Boxer', price: 'Rs 4800', image: 'pic9.avif' },
+                    {name: 'Rocky', age: '4 months', gender: 'Male', breed: 'Rottweiler', price: 'Rs 5200', image: 'pic10.avif' },
+                    {name: 'Milo', age: '8 months', gender: 'Male', breed: 'Bengal', price: 'Rs 3500', image: 'pic11.jpeg'},
+                    {name: 'Duke', age: '3 years', gender: 'Male', breed: 'Saint Bernard', price: 'Rs 7000', image: 'pic12.webp'},
+                    {name: 'Rocky', age: '3 years', gender: 'Male', breed: 'Bulldog', price: 'Rs 4500', image: 'pic13.avif'},
+                    {name: 'Penny', age: '3 years', gender: 'Female', breed: 'Russian Blue', price: 'Rs 3000', image: 'pic14.jpg'},
+                    {name: 'Oscar', age: '2.5 years', gender: 'Male', breed: 'Chartreux', price: 'Rs 3300', image: 'pic15.jpeg'},
+                    {name: 'Zoe', age: '1.5 years', gender: 'Female', breed: 'Cocker Spaniel', price: 'Rs 4200', image: 'pic16.avif'},
+                    {name: 'Lily', age: '6 months', gender: 'Female', breed: 'Siberian', price: 'Rs 3200', image: 'pic17.jpg'},
+                    {name: 'Leo', age: '2.5 years', gender: 'Male', breed: 'British Shorthair', price: 'Rs 4000', image: 'pic18.jpg'},
+                    {name: 'Rex', age: '3 months', gender: 'Male', breed: 'Husky', price: 'Rs 5800', image: 'pic19.jpg'},
+                    {name: 'Archie', age: '3 years', gender: 'Male', breed: 'Saint Bernard', price: 'Rs 7000', image: 'pic20.avif'},
+                    {name: 'Archie', age: '2 years', gender: 'Male', breed: 'Burmese', price: 'Rs 4000', image: 'pic21.webp'},
+                    {name: 'Lucy', age: '8 months', gender: 'Female', breed: 'Shih Tzu', price: 'Rs 4000', image: 'pic22.webp'},
+                    {name: 'Nala', age: '6 months', gender: 'Female', breed: 'Maine Coon', price: 'Rs 3300', image: 'pic23.2.webp'},
+                    {name: 'Chloe', age: '1.5 years', gender: 'Female', breed: 'Ragdoll', price: 'Rs 2800', image: 'pic24.webp'},
+                    {name: 'Toby', age: '1.8 years', gender: 'Male', breed: 'Russian Blue', price: 'Rs 4200', image: 'pic25.jpg'},
+                    {name: 'Charlie', age: '5 months', gender: 'Male', breed: 'Labrador', price: 'Rs 6000', image: 'pic26.jpg'},
+                    {name: 'Ella', age: '2 years', gender: 'Female', breed: 'Dalmatian', price: 'Rs 5400', image: 'pic27.jpg'},
+                    {name: 'Nina', age: '1.2 years', gender: 'Female', breed: 'Husky', price: 'Rs 6000', image: 'pic28.png'},
+                    {name: 'Teddy', age: '1.5 years', gender: 'Male', breed: 'Pomeranian', price: 'Rs 4200', image: 'pic29.jpg'},
+                    {name: 'Coco', age: '1 year', gender: 'Female', breed: 'Labrador', price: 'Rs 5000', image: 'pic30.webp'},
+                    {name: 'Bella', age: '1.5 years', gender: 'Female', breed: 'Beagle', price: 'Rs 3500', image: 'pic31.avif'},
+                    {name: 'Muffin', age: '1.2 years', gender: 'Male', breed: 'Sphynx', price: 'Rs 4500', image: 'pic32.webp'},
+                    {name: 'Sophie', age: '1 year', gender: 'Female', breed: 'American Shorthair', price: 'Rs 3100', image: 'pic33.jpg'},
+                    {name: 'Buddy', age: '2 years', gender: 'Male', breed: 'Poodle', price: 'Rs 4800', image: 'pic34.jpg'},
+                    {name: 'Milo', age: '2 years', gender: 'Male', breed: 'Abyssinian', price: 'Rs 3000', image: 'pic35.avif'},
+                    {name: 'Jasper', age: '1 year', gender: 'Male', breed: 'Bengal', price: 'Rs 3500', image: 'pic36.webp'},
+                    {name: 'Max', age: '2 years', gender: 'Male', breed: 'Golden Retriever', price: 'Rs 5000', image: 'pic37.jpeg'},
+                    {name: 'Simba', age: '2 years', gender: 'Male', breed: 'Persian', price: 'Rs 3000', image: 'pic38.jpg'},
+                    {name: 'Luna', age: '4 years', gender: 'Female', breed: 'Rottweiler', price: 'Rs 6500', image: 'pic39.webp'},
+                    {name: 'Ruby', age: '1.5 years', gender: 'Female', breed: 'Dachshund', price: 'Rs 3800', image: 'pic40.avif'},
+                    {name: 'Oliver', age: '3 years', gender: 'Male', breed: 'Maine Coon', price: 'Rs 4500', image: 'pic41.jpg'},
+                    {name: 'Misty', age: '2 months', gender: 'Female', breed: 'Turkish Van', price: 'Rs 3700', image: 'pic42.jpeg'},
+                    {name: 'Maggie', age: '4 months', gender: 'Female', breed: 'Ragdoll', price: 'Rs 2900', image: 'pic43.jpg'},
+                    {name: 'Tiger', age: '2 years', gender: 'Male', breed: 'Abyssinian', price: 'Rs 3600', image: 'pic44.jpg'},
+                    {name: 'Hunter', age: '2 years', gender: 'Male', breed: 'Scottish Fold', price: 'Rs 6000', image: 'pic45.jpg'},
+                    {name: 'Misty', age: '3 years', gender: 'Female', breed: 'Munchkin Cat', price: 'Rs 3900', image: 'pic46.jpg'},
+                    {name: 'Mia', age: '8 months', gender: 'Female', breed: 'Egyptian Mau', price: 'Rs 4800', image: 'pic47.jpeg'},
+                    {name: 'Bailey', age: '2 years', gender: 'Male', breed: 'German Shepherd', price: 'Rs 5500', image: 'pic48.webp'},
+                    {name: 'Oscar', age: '2 months', gender: 'Male', breed: 'Selkirk Rex', price: 'Rs 4900', image: 'pic49.jpeg'},
+                    {name: 'Murphy', age: '4 months', gender: 'Male', breed: 'Havana Brown', price: 'Rs 7000', image: 'pic50.jpg'},                    
+                ];
+
+                for (let i = 0; i < 50; i++) {
+            const pet = pets[i % pets.length]; // Cycle through the pets array
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            productCard.innerHTML = `
+                <div class="product-image"> 
+                    <img src="${pet.image}" alt="${pet.name}">      
+                </div> 
+                <div class="pet-content">
+                    <h3>Name: ${pet.name}</h3>
+                    <h4>Age: ${pet.age}</h4>
+                    <h5>Gender: ${pet.gender}</h5>
+                    <h6>Breed: ${pet.breed}</h6>
+                    <h2>Price: ${pet.price}</h2>
+                    <a href="" class="button0">Read More</a>
+                    <button>Adopt Now</button>
+                </div>
+            `;
+            productContainer.appendChild(productCard);
+        }
+    </script>
+    </div>        
+</body>
